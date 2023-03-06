@@ -1,10 +1,9 @@
 import * as React from "react";
 import { Menu as MUIMenu } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
 import MenuItem from "./MenuItem";
 
-function Menu({ options, onHanldeClick, open, onClose }) {
+function Menu({ options, open, onClose }) {
   return (
     <>
       <MUIMenu open={open} onClose={onClose} disableScrollLock>
