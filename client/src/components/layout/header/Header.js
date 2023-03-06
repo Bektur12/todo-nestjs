@@ -95,11 +95,12 @@ function Header() {
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
-            {settings.map((setting) => (
+            {}
+            {/* {settings.map((setting) => (
               <MenuItem key={setting} onClick={handleCloseUserMenu}>
                 <p>{setting}</p>
               </MenuItem>
-            ))}
+            ))} */}
           </Menu>
         </div>
       </Toolbar>
