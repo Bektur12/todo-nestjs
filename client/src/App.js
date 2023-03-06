@@ -1,5 +1,10 @@
 import React from "react";
+import { Button } from "./components/forms/Button/Button";
 
 export const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Button>hello</Button>
+    </div>
+  );
 };
