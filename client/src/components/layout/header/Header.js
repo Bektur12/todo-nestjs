@@ -4,10 +4,10 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Menu from "../../forms/Menu/Menu";
 import MenuItem from "../../forms/Menu/MenuItem";
+import { Button } from "../../forms/Button/Button";
 
 const pages = ["Javascript", "React", "Nodejs"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -30,11 +30,9 @@ function Header() {
           </Menu>
         </div>
         <LogoTitle>LOGO</LogoTitle>
-        <Box sx={{ flexGrow: 1, display: { md: "flex" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => (
-            <Button key={page} sx={{ my: 2, color: "white", display: "block" }}>
-              {page}
-            </Button>
+            <ButtonStyled>{page}</ButtonStyled>
           ))}
         </Box>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -58,4 +56,8 @@ const ContainerAppBar = styled(AppBar)(() => ({
 
 const LogoTitle = styled("h5")(() => ({
   marginRight: "30px",
+}));
+
+const ButtonStyled = styled(Button)(() => ({
+  color: "red",
 }));

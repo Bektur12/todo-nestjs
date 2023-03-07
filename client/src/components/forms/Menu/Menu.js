@@ -3,7 +3,7 @@ import { Menu as MUIMenu } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MenuItem from "./MenuItem";
 
-function Menu({ options, open, onClose }) {
+const Menu = React.forwardRef(({ options, open = false, onClose }, ref) => {
   return (
     <>
       <MuiMenuStyled
@@ -15,6 +15,7 @@ function Menu({ options, open, onClose }) {
           horizontal: "right",
         }}
         disableScrollLock
+        ref={ref}
       >
         <MenuWrapper>
           {options?.map((option) => (
@@ -26,7 +27,8 @@ function Menu({ options, open, onClose }) {
       </MuiMenuStyled>
     </>
   );
-}
+});
+
 export default Menu;
 
 const MenuWrapper = styled("div")(() => ({
